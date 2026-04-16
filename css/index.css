@@ -1,0 +1,993 @@
+:root {
+    /*TEXTO*/
+    --texto-botones: 'Montserrat', sans-serif;
+    --texto-works: 'Bebas Neue', sans-serif;
+    --texto-web: 'Bebas Neue', sans-serif;
+    --texto-cuerpo: 'Montserrat', sans-serif;
+    /*MEDIDAS*/
+    --fs-button: 0.875rem;
+    --fs-text: 1rem;
+    --fs-text-works: 3rem;
+    --fs-text-web: 2rem;
+   /*COLORES*/
+    --color-texto: #000000;
+    --color-botones: #A9A9A9;
+    --color-linias: #A9A9A9;
+    --color-titulo: #FFFFFF;
+
+    /*KERNING*/
+    --letterspaccing-buttons:.0625rem;
+    --letterspaccing-works:.625rem
+}
+
+
+/* --- RESET I BODY --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* --------------------------------------------------- 1. HEADER I NAV------------------------------------------------- */
+.Header {
+    background-color: #FFFFFF; /* Fons blanc pur */
+    width: 100%;
+    height: 80px; /* Altura fixa per al Header per a poder calcular la foto després */
+    display: flex;
+    align-items: center; /* Centrat vertical */
+    padding: 0 5%; /* Aire als costats */
+    border-bottom: 1px solid #E0E0E0; /* Línia fineta opcional */
+    flex-shrink: 0; /* Impedeix que el header s'encongeix */
+}
+
+.Nav-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Logo esquerra, Menú dreta */
+    align-items: center;
+}
+
+/* Logo */
+.Logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #000000;
+    letter-spacing: 2px;
+}
+
+.List-nav {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.List-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-family: var(--texto-botones);
+    font-size: var(--fs-button);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.List-nav a:hover {
+    color: #A9A9A9;
+}
+
+/* --- 2. SECCIÓ FOTO (L'ESPAI QUE QUEDA) --- */
+.Contenedor-home {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 80px); 
+    overflow: hidden;
+    flex-grow: 1;     /*ESTO ESTÁ HECHO CON IA*/
+}
+
+.Contenedor-home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- 3.PARTE DE TEXTO--- */
+.Text-home {
+    position: absolute;
+    right: 3%;   
+    bottom: 5px;  
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left;        
+    z-index: 10;           
+}
+
+.Text-home h2 {
+    color: var(--color-titulo);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 15vw, 11rem);
+    line-height: 0.8;
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.Text-home p {
+    color: var(--color-titulo);
+    font-family: var(--texto-web);
+    font-size: 2.5rem;
+    letter-spacing: 12px;
+    
+}
+
+
+.Footer {
+    background-color: #FFFFFF; 
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: center; 
+    border-top: 1px solid #E0E0E0;
+    flex-shrink: 0;
+    & p {
+        font-family: var(--texto-cuerpo);
+        font-size: 0.7rem; 
+        color: #A9A9A9;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+}
+
+/*----------------------------------------------------------------------------------CONCEPT------------------------------------------------------------------*/
+
+
+
+.Section-concept{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3.75rem ;
+    padding: 3.75rem;
+    gap: 2.5rem;
+    width: 75rem;
+    margin: 0 auto;
+    margin-top: 3.75rem;
+
+    & h1{
+        font-family: var(--texto-works);
+        font-size: var(--fs-text-works);
+        color: var(--color-texto);
+        letter-spacing: var(--letterspaccing-works);
+    }
+}
+.Section-buttons{
+    display: flex;
+    flex-direction: row;
+    gap: .9375rem;
+   
+    & a{
+        border-radius: 1px solid black;
+       text-decoration: none;
+       color: var(--color-botones);
+       font-family: var(--texto-botones);
+       font-size: var(--fs-button);
+       letter-spacing: var(--letterspaccing-buttons);
+       transition: 0.2s;
+       
+    }
+    & a:hover{
+        font-size: 1.0625rem;
+        color: var(--color-texto);
+    }
+}
+
+.Container-contact{
+    font-family: var(--texto-cuerpo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    text-align: center;
+    
+    
+}
+
+.concep{
+    opacity: 0.5;
+}
+
+.Section-concept h2 {
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.Container-concept {
+    padding-inline: clamp(1rem, 5%, 5rem); 
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+.Section-concept {
+    margin-top: clamp(2rem, 8vh, 6rem);
+}
+
+
+/*EFECTO DE TARGET PARA LOS BOTONES DE LOS IDOMAS*/
+
+/* 1. ESCONDEMOS LOS IDIOMAS PRIMERO*/
+#castellano,
+#ingles,
+#valenciano {
+    display: none;
+}
+
+/* 2. PERO QUE EL CASTELLANO SE VEA SI NO HAY NINGUN ESTADO ACTIVO*/
+#castellano {
+    display: block;
+    width: 100%;
+    font-family: var(--texto-cuerpo);
+    text-align: center;
+}
+
+/* 3. SI SE ACTIVA CUALQUIER TARGET QUE NO SEA EL CASTELLANO ESCONDEMOS EL CASTELLANO */
+
+:target:not(#castellano) ~ #castellano, 
+body:has(#ingles:target) #castellano,
+body:has(#valenciano:target) #castellano {
+    display: none !important;
+    scroll-margin-top: 100vh; 
+}
+
+
+
+#castellano:target,
+#ingles:target,
+#valenciano:target,
+#castellano { 
+    display: block !important;
+    width: 100%;
+    font-family: var(--texto-cuerpo);
+    color: var(--color-texto);
+    scroll-margin-top: 100vh; 
+    
+    
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+:target {
+    /* Desplaça l'objectiu fora de la vista de scroll */
+}
+
+/*---------------------------------------------------------------WORKS--------------------------------------------------------------------------------------*/
+
+
+.Main-works{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3.75rem;
+
+    & h1{
+        font-family: var(--texto-works);
+        color: var(--color-texto);
+        font-size: var(--fs-text-works);
+        letter-spacing: var(--letterspaccing-works);
+    }
+}
+.Grid-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 100%;
+}
+.Project-item{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
+    justify-content: space-between;
+    height: 6.25rem;
+    align-items: center;
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--color-linias);
+    transition: 0.2s;
+
+    & span{
+        font-family: var(--texto-cuerpo);
+        font-size: .625rem;
+        letter-spacing: var(--letterspaccing-buttons);
+    }
+
+    & a{
+        font-family: var(--texto-works);
+        font-size: var(--fs-text-works);
+        letter-spacing: var(--letterspaccing-works);
+        color: var(--color-texto);
+        text-decoration: none;
+    }
+}
+
+/* --- HOVER --- */
+.Project-item:hover a, 
+.Project-item:hover span {
+    color: white; 
+    transition: color 0.3s ease; 
+
+}
+
+.Return-works{
+    font-family: var(--texto-works);
+    color: var(--color-texto);
+    letter-spacing: var(--letterspaccing-works);
+    font-size: var(--fs-text-works);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.Return-works:hover{
+    opacity: 0.5;
+}
+
+.worka{
+    opacity: 0.5;
+
+}
+
+.works{
+    opacity: 0.5;
+}
+
+
+
+/*-----------------------------------------------------------ABOUT ME--------------------------------------------------------------------------------*/
+
+
+.Main-about {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100vh - 80px); 
+    align-items: stretch; 
+    overflow: hidden;
+}
+
+/* BLOC ESQUERRA: CONTINGUT */
+.Section-about {
+    flex: 1.2;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 5%;
+    background-color: white;
+}
+
+.About-content-wrapper {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Section-about h1 {
+    font-family: var(--texto-works);
+    font-size: var(--fs-text-works);
+    letter-spacing: var(--letterspaccing-works);
+    color: var(--color-texto);
+    align-self: flex-start;
+    position: relative;     
+    left: -10%;             
+    margin-bottom: 4rem; 
+}
+
+
+.About-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.About-buttons a {
+    text-decoration: none;
+    color: #999;
+    font-family: var(--texto-botones);
+    font-size: var(--fs-button);
+    transition: 0.3s;
+}
+
+.About-buttons a:hover {
+    color: black;
+}
+
+
+.About-text {
+    display: none; 
+    font-family: var(--texto-cuerpo);
+    line-height: 1.8;
+    color: var(--color-texto);
+    text-align: center;
+}
+
+#Spanish-about { display: block; } 
+:target { display: block; }
+body:has(#English-about:target) #Spanish-about,
+body:has(#Valencian-about:target) #Spanish-about {
+    display: none;
+}
+
+
+.About-image-container {
+    flex: 0.8;
+    height: 100%;
+}
+
+.About-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+
+/*---------------------------------------------------------PROJECT1,2,3,4,5,6,7-------------------------------------------------------------------------------*/
+
+
+
+.Main-project1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+    margin: 3.75rem 0; 
+    padding: 0 1rem; 
+    gap: 3.125rem;
+
+     & h1{
+        font-family: var(--texto-works);
+        font-size: var(--fs-text-works);
+        letter-spacing: var(--letterspaccing-works);
+    }
+
+}
+.Card-project1{
+   opacity: 0; 
+    animation-name: opacidad;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    
+
+}
+.Project-info {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1rem;
+}
+
+.Project-info li {
+    font-family: var(--texto-cuerpo);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 5px;
+    width: fit-content; 
+    min-width: 200px;  
+    text-align: center;
+}
+
+.Container-project1{
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 5rem;
+    padding: 5rem;;
+    gap:3.75rem;
+
+   }
+
+.Container-project1 img{
+    max-width: 100%;
+    height: auto;
+    min-width: 100%;
+
+}
+
+.Buttons-project1{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+
+    & a{
+        font-family: var(--texto-works);
+    color: var(--color-texto);
+    letter-spacing: var(--letterspaccing-works);
+    font-size: var(--fs-text-works);
+    text-decoration: none;
+
+    }
+
+    & a:hover{
+        opacity: 0.5;
+    }
+}
+
+.worka{
+    opacity: 0.5;
+
+}
+
+.works{
+    opacity: 0.5;
+}
+
+/*ANIMACION DE LA FICHA DE CADA GALERIA*/
+
+@keyframes opacidad{
+    from{
+        opacity: 0;
+
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+
+/* ---------------AQUÍ ESCONDEMOS EL MENU DE HAMBURGUESA-------------- */
+               
+.Label-hamburguesa{
+    display: none;
+}
+#Menu-hamburguesa{
+    display: none;
+}
+
+/*------------------------------------------------------RESPONSIVE DE TODA LA WEB-MEDIA QUERYS-----------------------------------------------------------*/
+
+
+@media (max-width:768px){
+  /*--HEADER--*/  
+   
+    /*menos separación en el nav*/
+    .List-nav{
+        gap: 1.25rem;
+        margin: 20px;
+    }
+
+    .Text-home h2{
+        font-size: 6rem;
+    }
+
+    .Text-home p{
+        font-size: 1.5rem;
+    }
+
+
+    /*--CONCEPT--*/
+
+    .Section-concept{
+        max-width: 43.75rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+        & h1{
+            font-size: 2.5rem;
+        }
+        
+        & p{
+            font-size: 1rem;;
+        }
+    }
+
+    .Section-buttons:hover{
+        color: var(--color-texto);
+        font-size: 1.1rem;;
+    }
+
+    /*--WORKS--*/
+
+    .Main-works{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+
+        & h1{
+            font-size: 2.5rem;
+        }
+
+        & a{
+            font-size: 2rem;
+        }
+
+    }
+    
+    .Main-works a:hover{
+        opacity: 0.5;
+        font-size: 2.5rem;
+    }
+
+    .Grid-projects span a:hover{
+         opacity: 0.5;
+        font-size: 2rem;
+    }
+
+    /*--PROJECTS--*/
+
+    .Main-project1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        & h1{
+            font-size: 2.5rem;
+        }
+    }
+
+    .Project-info li{
+        font-size: 0.7rem;
+    }
+
+
+    /*ESTO ME DIO MUCHOS PROBLEMAS POR CULPA DEL MARGIN I PADING HEREDADOS, FRUTO DE ESO NACE LA DESESPERACION CON EL IMPORTANT  */
+
+.Container-project1 {
+        margin: 0 !important;    
+        padding: 1rem !important;   
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    
+    .Container-project1 picture, 
+    .Container-project1 img {
+        display: block !important;
+        width: 100% !important;     
+        max-width: 100% !important;
+        height: auto !important;
+        min-width: 100% !important;
+    }
+
+    
+    .Main-project1 {
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .Buttons-project1 a:hover{
+        opacity: 0.5;
+        font-size: 3rem;
+        
+    }
+    
+
+
+/* -------------------------------------------------------------ABOUT ME------------------------------------------------------------------------ */
+ .About-text-cast, .About-text-ing, .About-text-val{
+        gap: 20px;
+    }
+
+    .Container-about{
+        & h1{
+            font-size: 2.5rem;
+            line-height: 50px;
+        }
+
+        & p{
+            font-size: 1rem;
+            text-align: center !important;
+        }
+    }
+    .About-buttons a{
+        font-size: 1rem;
+    }
+
+    
+    
+    /* --- AJUSTE FOTO TABLET (768px) --- */
+
+.Main-about {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    align-items: center !important;
+    padding: 2rem !important; 
+}
+
+.Main-about picture {
+    display: block !important;
+    width: 80% !important;     
+    max-width: 600px !important; 
+    height: 400px !important;   
+    margin: 0 auto 30px auto !important;
+    overflow: hidden !important;
+    order: 1 !important;
+}
+
+.Main-about picture img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 20% !important; 
+    
+}
+
+.Section-about {
+    width: 100% ;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    gap: 1.25rem;
+}
+    .Section-about h1 {
+        position: static !important;
+        text-align: center !important;
+        margin-bottom: 10px !important;
+    }
+
+    .Container-about {
+        position: static;
+        width: 100%;
+        right: auto; 
+        bottom: auto;
+        padding: 0 20px 40px 20px
+    }
+
+
+}
+
+/* --------------------------------------------------------MEDIA QUERIS PARA MOVIL--------------------------------------------------------------- */
+
+
+@media (max-width:480px){
+    
+/* --------------------------------------------------------HOME---------------------------------------------------------------------------------- */
+   
+    
+    .Contenedor-home{
+        position: relative;
+    }
+    .Text-home{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 20px;
+        bottom: 60px;
+    }
+
+    .Text-home h2{
+        font-size: 4.5rem;
+    }
+
+    .Text-home p{
+        font-size: 1.2rem;
+    }
+
+
+/* --------------------------------------------------------CONCEPT------------------------------------------------------------------------------ */
+
+ /*--CONCEPT--*/
+
+    .Section-concept{
+        max-width: 25rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        
+        & h1{
+            font-size: 2rem !important;
+            line-height: 50px;
+        }
+        
+        & p{
+            font-size: 1rem;;
+        }
+    }
+
+    .Section-buttons a{
+        font-size: 1rem !important;
+    }
+
+    .Section-buttons:hover{
+        color: var(--color-texto);
+        font-size: 1.1rem;;
+    }
+
+
+    /*-----------------------------------------------------------------WORKS---------------------------------------------------------------------*/
+
+    .Main-works{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+
+        & h1{
+            font-size: 2rem;
+        }
+
+        & a{
+            font-size: 2rem;
+        }
+
+    }
+    
+    .Main-works a:hover{
+        opacity: 0.5;
+        font-size: 2.5rem;
+    }
+
+    .Grid-projects span a:hover{
+         opacity: 0.5;
+        font-size: 2rem;
+    }
+
+    .Grid-projects{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Section-buttons a{
+        font-size: 1.2rem;
+    }
+
+    .Project-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+       
+        & span{
+            display: none;
+        }
+        
+        & a{
+            font-size: 1.5rem;
+        }
+
+       }
+
+     .Return-works{
+            opacity: 0.5 !important;
+        }
+
+    .Main-works a:hover{
+        opacity: 0.5;
+        font-size: 2rem;
+    }
+
+    /* -----------------------------------------------------PROJECT---------------------------------------------------------------------------- */
+
+    .Main-project1 h1{
+        font-size: 1.8rem;
+
+    }
+    
+    .Main-project1{
+
+        & li{
+            font-size: 0.7rem;
+        }
+        & a{
+            opacity: 0.5;
+            font-size: 1.5rem;
+        }
+    }
+    .Main-project1 a:hover{
+        font-size: 2rem;
+    }
+
+
+    /* --------------------------------------------------ABOUT ME------------------------------------------------------------------------- */
+    .About-text-cast, .About-text-ing, .About-text-val{
+        gap: 20px;
+    }
+
+    .Container-about{
+        & h1{
+            font-size: 2rem;
+            line-height: 50px;
+        }
+
+        & p{
+            font-size: 1rem;
+            text-align: center !important;
+        }
+    }
+    .About-buttons a{
+        font-size: 1rem;
+    }
+
+    .Main-about {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    
+    .Main-about picture {
+       display: block !important;
+    width: 90% !important;      
+    max-width: 350px !important; 
+    height: 250px !important;    
+    margin: 20px auto !important;
+    order: 1 !important;
+    overflow: hidden !important;
+    }
+
+    .Main-about picture img {
+        width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    object-position: center top;  
+    border-radius: 15px !important;
+    }
+
+   
+    .Section-about {
+        width: 100% !important;
+        position: static !important;
+        display: flex !important;
+        flex-direction: column !important;
+        order: 2 !important; 
+        gap: 20px !important;
+    }
+
+    .Section-about h1 {
+        position: static !important;
+        text-align: center !important;
+        margin-bottom: 10px !important;
+    }
+
+    .Container-about {
+        position: static !important;
+        width: 100% !important;
+        right: auto !important; 
+        bottom: auto !important;
+        padding: 0 20px 40px 20px !important;
+    }
+
+/* PORQUE TIENE TANTOS IMPORTANTS? PUES PORQUE AL CAMBIAR LA SECCIO EN DESKPT TODO CAMBIO, ASI QUE DADA LA JERARQUIA EN HTML, TUVE QUE NO SOLO HACER USO DEL DISPLAY Y HACER USO 
+DEL POSITION, ESTO ME LLEVO A LUEGO TENER COMPLICACIONES EN LA PARTE DEL RESPONSIVE PARA ORDENAR LOS ELEMENTOS */
+
+    /* --------- MENU HAMBURGUESA (DINS DE LA MEDIA QUERY DE 480PX) -----------------------*/
+
+    .Label-hamburguesa {
+        display: block !important; 
+    }
+
+    .List-nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1000;
+        padding: 20px;
+        border-bottom: 1px solid #E0E0E0;
+    }
+
+    #Menu-hamburguesa:checked ~ .List-nav {
+        display: flex !important;
+    }
+
+} 
+
