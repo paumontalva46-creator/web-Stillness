@@ -1,42 +1,40 @@
+//  CARRUSEL DE LA HOME 
 
+// 1. Creo un array con los nombres de las fotos (sin la extensión)
+// He revisado que los nombres coincidan exactamente con los archivos de la carpeta
+const imagenesHome = ["home1", "home2", "home3"];
 
-//CARRUSEL HOME
+// 2. Variable tipo 'let' para saber en qué imagen estamos empezando 
+let posicionActual = 0;
 
+// 3. Selecciono los elementos del HTML por su ID para poder cambiarlos luego
+const imagenPrincipal = document.getElementById("carrusel-img");
+const fuenteWebp = document.getElementById("carrusel-source");
 
-// 1. Hacemos un array con las imagenes primero 
-const imatges = [
-    "home1", // La que esta ahora
-    "home2", // La que falta
-    "home3"  // La que falta
-];
+// 4. Función que se encarga de ir pasando las fotos
+function pasarFoto() {
+    // Sumo uno a la posición para ir a la siguiente imagen
+    posicionActual++;
 
-// 2. Creo una variable para empezar por la 0
-let index = 0;
-
-// 3. Entro y cojo mis dos elementos de mi picture
-const imatgeElement = document.getElementById("carrusel-img");
-const sourceElement = document.getElementById("carrusel-source");
-
-// 4. Y empiezo una función en la que le digo a index, que seria en este caso la posicion 0 del array, que le voy a sumar 1
-function canviarImatge() {
-    
-    index++;
-
-    // y que si llega al final de la lista que vuelva a 0
-    if (index >= imatges.length) {
-        index = 0;
+    // Control de seguridad: Si llego al final del array, vuelvo a la primera
+    if (posicionActual >= imagenesHome.length) {
+        posicionActual = 0;
     }
 
-    // y ya cambio las rutas de las imagenes
-    
-    sourceElement.srcset = `carrusel/${imatges[index]}.webp`;
-    imatgeElement.src = `carrusel/${imatges[index]}.jpg`;
+    // 5. Cambio las rutas de los archivos usando el nombre que toca según el indice
+    // Actualizo el .jpg para que se vea en todos los navegadores y móviles, EN ESTA PARTE DE CAMBIAR LAS RUTAS E TENIDO AYUDA DE LA IA, DADO QUE DESPUES DE HACERLO YO, ME FUNCIONAVA EN DESKOPT PERO NO EN MOVIL
+    if (imagenPrincipal) {
+        imagenPrincipal.src = "carrusel/" + imagenesHome[posicionActual] + ".jpg";
+    }
+
+    // Tambien actualizo el .webp para que en ordenadores cargue la versión optimizada
+    if (fuenteWebp) {
+        fuenteWebp.srcset = "carrusel/" + imagenesHome[posicionActual] + ".webp";
+    }
 }
 
-
-// 5. Por último le digo cada cuanto tiene que hacer el cambio.
-setInterval(canviarImatge, 3000);
-
+// 6. Activo el temporizador para que la función se ejecute sola cada 3 segundos
+setInterval(pasarFoto, 3000);
 
 
 
