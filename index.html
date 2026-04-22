@@ -2,20 +2,23 @@
 <html lang="ca">
 
 <head>
+    <!--ETIQUETA PARA UN MEJOR POSICIONAMIENTO SEO-->
+    <meta name="description" content="Stillness - Una exploración visual sobre el minimalismo y la calma a través del disseño web y la fotografia de Pau Montalvá.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STILLNESS | Pau Montalvá</title>
     <link rel="stylesheet" href="css/index.css">
     <script defer src="js/index.js"></script>
 
-    <!------------------------------------------------------TIPOGRAFIA-------------------------------------------------------------------->
+    <!--TIPOGRAFIA-->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100..900&display=swap"
         rel="stylesheet">
 </head>
 
-<!---------------------------------------------------------LOGO + NAV----------------------------------------------------------------------->
+<!--LOGO + NAV-->
 
 <body>
     <header class="Header">
@@ -25,14 +28,15 @@
             <input type="checkbox" id="Menu-hamburguesa" style="display: none;">
 
             <ul class="List-nav">
-                <li class="Item-nav"><a href="index.html">HOME</a></li>
-                <li class="Item-nav"><a href="concept.html">CONCEPT</a></li>
-                <li class="Item-nav"><a href="works.html">WORKS</a></li>
-                <li class="Item-nav"><a href="about.html">ABOUT ME</a></li>
+                <li class="Item-nav"><a href="index.html" title="item del nav">HOME</a></li>
+                <li class="Item-nav"><a href="concept.html" title="item del nav">CONCEPT</a></li>
+                <li class="Item-nav"><a href="works.html" title="item del nav">WORKS</a></li>
+                <li class="Item-nav"><a href="about.html" title="item del nav">ABOUT ME</a></li>
             </ul>
-            <!-------------------------------------------------------------MENU HAMBURGUESA------------------------------------------------------------>
 
-            <label class="Label-hamburguesa" for="Menu-hamburguesa">
+            <!--MENU HAMBURGUESA-->
+
+            <label class="Label-hamburguesa" aria-label="Abre menú de navegación" for="Menu-hamburguesa">
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="List-icon"
                     viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
@@ -42,7 +46,9 @@
         </nav>
     </header>
 
-    <!-----------------------------------------------------------IMAGEN DE FONDO---------------------------------------------------------------->
+
+    <!--IMAGEN DE FONDO-->
+
     <main class="Contenedor-home">
         <picture>
             <source id="carrusel-source" media="(min-width: 800px)" srcset="carrusel/home1.webp">
@@ -57,6 +63,7 @@
     </main>
 
     <!--FOOTER-->
+
     <footer class="Footer">
         <p>&copy; 2026 Pau Montalvá. All rights reserved.</p>
 
