@@ -927,23 +927,22 @@ ul.List-nav li.Item-nav a#aboutme {
 
 
     /* --------------------------------------------------ABOUT ME------------------------------------------------------------------------- */
+    
     .Main-about {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
         gap: 1.25rem;
         height: auto;
-        margin: 20px;
-        padding: 20px;
-
+        margin: 10px;  
+        padding: 10px; 
     }
 
     .Section-about {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 37.5rem;
-
+        width: 100%; 
     }
 
     .About-content-wrapper {
@@ -951,54 +950,34 @@ ul.List-nav li.Item-nav a#aboutme {
         flex-direction: column;
         align-items: center;
         gap: 1.25rem;
-
-        width: 25rem;
+        width: 90%; 
 
         & h1 {
             align-items: flex-start;
-            font-size: 2rem;
+            font-size: 2rem; 
         }
 
         & p {
-            font-size: 1rem;
+            font-size: 1rem; 
         }
-
-
     }
 
     .About-content-wrapper h1 {
         display: flex;
         align-self: center;
         margin: 20px;
-        align-self: center;
-        left: 0;
         text-align: center;
         margin-left: 0;
         margin-right: 0;
     }
 
-
     .About-image-container img {
-        width: 80%;
-        max-width: 500px;
+        width: 100%; 
+        max-width: 400px; 
         height: auto;
         display: block;
         margin: 0 auto;
-
     }
-
-    .Main-about,
-    .Section-about,
-    .About-content-wrapper h1 {
-        align-self: center;
-    }
-
-    .Section-about .Container-about a {
-        font-size: 0.9rem;
-    }
-
-
-
 
     /* --------- MENU HAMBURGUESA-----------------------*/
 
@@ -1024,3 +1003,4 @@ ul.List-nav li.Item-nav a#aboutme {
     }
 
 }
+
